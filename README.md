@@ -32,11 +32,11 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 
 ## Getting Started
 
-Zidanni: Setup up seperate pages including hobby page
-Zidanni: Setup navbar and routes
-Zidanni: Added personal photo
-Zidanni: Added personal about me + styling
-Zidanni: Added personal map + styling
+- Zidanni: Setup up seperate pages including hobby page
+- Zidanni: Setup navbar and routes
+- Zidanni: Added personal photo
+- Zidanni: Added personal about me + styling
+- Zidanni: Added personal map + styling
 
 ## Installation
 
