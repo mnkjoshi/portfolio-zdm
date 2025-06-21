@@ -32,7 +32,7 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 
 ## Getting Started
 
-You need to do all your progress here.
+Zidanni: Setup up seperate pages including hobby page
 
 ## Installation
 
