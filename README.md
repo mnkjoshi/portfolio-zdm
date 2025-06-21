@@ -36,6 +36,7 @@ Zidanni: Setup up seperate pages including hobby page
 Zidanni: Setup navbar and routes
 Zidanni: Added personal photo
 Zidanni: Added personal about me + styling
+Zidanni: Added personal map + styling
 
 ## Installation
 
