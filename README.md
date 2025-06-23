@@ -44,7 +44,8 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 - Deeptanshu: Added personal photo, about me + styling, personal map + styling
 - Manav: Added personal photo, about me, personal map
 - Manav: Merged profile pages into one re-usable component, integrated jinja for components
-- Manav, Ziddani, Deeptanshu: Reviewed and approved PRs
+- Manav, Zidanni, Deeptanshu: Reviewed and approved PRs
+- Zidanni: Fixed jinja template styling to include date and company
 
 ## Installation
 
