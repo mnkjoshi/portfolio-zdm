@@ -33,6 +33,7 @@ def get_nav_data(current_route):
 @app.route('/')
 def index():
     nav_data = get_nav_data('index')
+    template = env.get_template("profile.html")
     
     EXPERIENCE = [
         {'company': 'Independent', 'title': 'Software Developer', 'date': 'September 2024 – Present'},
@@ -44,7 +45,7 @@ def index():
         {'school': 'Stevens Institute of Technology', 'title': 'Bachelor of Science in Computer Science'},
     ]
     
-    return render_template('profile.html', title="Zidanni Clerigo", url=os.getenv("URL"), map="./static/img/zidanni-map.jpg",  nav_items=nav_data, profile_picture="./static/img/zidanni.jpg", education=EDUCATION, experience=EXPERIENCE, about_me_text="Hello! I'm Zidanni Clerigo, an incoming second year Computer Science student at Stevens Institute of Technology. I'm super passionate about building projects and pitching them to other people! Deployment and maintenance has always been a roadblock for me so I'm very excited to be in the Production Engineering track.")
+    return template.render(title="Zidanni Clerigo", url=os.getenv("URL"), map="./static/img/zidanni-map.jpg", nav_items=nav_data, profile_picture="./static/img/zidanni.jpg", education=EDUCATION, experience=EXPERIENCE, about_me_text="Hello! I'm Zidanni Clerigo, an incoming second year Computer Science student at Stevens Institute of Technology. I'm super passionate about building projects and pitching them to other people! Deployment and maintenance has always been a roadblock for me so I'm very excited to be in the Production Engineering track.")
 
 
 @app.route('/manav')
@@ -62,11 +63,8 @@ def manav():
         {'school': 'University of Alberta', 'title': 'Electrical Engineering'},
         {'school': 'Old Scona Academic', 'title': 'International Baccalaureate Diploma'},
     ]
-    # Render the template with the provided data
+    
     return template.render(title="Manav", url=os.getenv("URL"), nav_items=nav_data, profile_picture="./static/img/manav.jpg", education=EDUCATION, experience=EXPERIENCE, map="./static/img/manav-map.png", about_me_text="Hi there! I'm Manav, a third-year Electrical Engineering student at the University of Alberta. Planning, building, and deploying projects has been a pursuit of mine for a long time, and I'm excited to be part of the Production Engineering track. I love working on projects that involve hardware and software integration, and I'm always looking for new challenges to tackle.")
-
-    # return render_template('manav.html', title="Manav", url=os.getenv("URL"), nav_items=nav_data)
-
 
 @app.route('/deeptanshu')
 def deeptanshu():
@@ -87,9 +85,9 @@ def hobbies():
     
     # Zidanni's hobbies
     ZIDANNI_HOBBIES = [
-        {'title': 'Coding', 'about': 'I love to build applications and websites in my free time!', 'icon': 'https://cdn-icons-png.flaticon.com/512/1005/1005141.png'},
-        {'title': 'Reading', 'about': 'I enjoy reading books on technology and science fiction.', 'icon': 'https://cdn-icons-png.flaticon.com/512/2436/2436882.png'},
-        {'title': 'Photography', 'about': 'Capturing moments and scenery through photography is one of my passions.', 'icon': 'https://cdn-icons-png.flaticon.com/512/1042/1042390.png'},
+        {'title': 'Game Development', 'about': 'I like building story games in my free time and doing game jams.', 'icon': 'https://cdn-icons-png.flaticon.com/512/1005/1005141.png'},
+        {'title': 'Reading', 'about': 'My favorite book series is the Three Body Problem. I also like reading fantasy like The Hobbit.', 'icon': 'https://cdn-icons-png.flaticon.com/512/2436/2436882.png'},
+        {'title': 'Photography', 'about': 'I like taking goofy pictures of my friends lol!', 'icon': 'https://cdn-icons-png.flaticon.com/512/1042/1042390.png'},
     ]
     
     # Deeptanshu's hobbies
