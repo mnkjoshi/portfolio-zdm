@@ -256,7 +256,7 @@ body {
     margin-bottom: 0;
 }
 
-.about-text p::first-letter {
+.about-text p:not(.date)::first-letter {
     font-size: 1.2em;
     font-weight: 600;
     color: #1d539f;
@@ -329,4 +329,46 @@ body {
     .map-wrapper {
         padding: 20px;
     }
+}
+
+/* Experience and Education Item Styling */
+.experience-item, .education-item {
+    background: #f8f9fa;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #1d539f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-item:hover, .education-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.experience-item h3, .education-item h3 {
+    color: #1d539f;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.experience-item h4, .education-item h4 {
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.experience-item .date {
+    color: #777;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+    font-weight: 400;
+}
+
+.experience-item:last-child, .education-item:last-child {
+    margin-bottom: 0;
 }

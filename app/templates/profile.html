@@ -79,7 +79,11 @@
             <div class="about-content">
                 <div class="about-text">
                     {% for item in experience %}
-                        <p href="{{ item }}" >{{ item.title }}</p>
+                        <div class="experience-item">
+                            <h3>{{ item.title }}</h3>
+                            <h4>{{ item.company }}</h4>
+                            <p class="date">{{ item.date }}</p>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
@@ -95,7 +99,10 @@
             <div class="about-content">
                 <div class="about-text">
                     {% for item in education %}
-                        <p href="{{ item }}" >{{ item.title }}</p>
+                        <div class="education-item">
+                            <h3>{{ item.title }}</h3>
+                            <h4>{{ item.school }}</h4>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
