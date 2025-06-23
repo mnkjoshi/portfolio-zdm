@@ -44,7 +44,7 @@ def index():
         {'school': 'Stevens Institute of Technology', 'title': 'Bachelor of Science in Computer Science'},
     ]
     
-    return render_template('zidanni.html', title="Zidanni Clerigo", url=os.getenv("URL"), nav_items=nav_data, profile_picture="./static/img/zidanni.jpg", education=EDUCATION, experience=EXPERIENCE, about_me_text="Hello! I'm Zidanni Clerigo, an incoming second year Computer Science student at Stevens Institute of Technology. I'm super passionate about building projects and pitching them to other people! Deployment and maintenance has always been a roadblock for me so I'm very excited to be in the Production Engineering track.")
+    return render_template('profile.html', title="Zidanni Clerigo", url=os.getenv("URL"), map="./static/img/zidanni-map.jpg",  nav_items=nav_data, profile_picture="./static/img/zidanni.jpg", education=EDUCATION, experience=EXPERIENCE, about_me_text="Hello! I'm Zidanni Clerigo, an incoming second year Computer Science student at Stevens Institute of Technology. I'm super passionate about building projects and pitching them to other people! Deployment and maintenance has always been a roadblock for me so I'm very excited to be in the Production Engineering track.")
 
 
 @app.route('/manav')
@@ -77,4 +77,35 @@ def deeptanshu():
 @app.route('/hobbies')
 def hobbies():
     nav_data = get_nav_data('hobbies')
-    return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"), nav_items=nav_data)
+    
+    # Manav's hobbies
+    MANAV_HOBBIES = [
+        {'title': 'Sports', 'about': 'I enjoy playing sports in my free time, from Soccer to Badminton!', 'icon': 'https://cdn-icons-png.flaticon.com/512/11438/11438126.png'},
+        {'title': 'Gaming', 'about': 'Video games can be fun! You can sometimes catch me playing games from Paradox Studios or Rocket League!', 'icon': 'https://cdn-icons-png.flaticon.com/512/5260/5260498.png'},
+        {'title': 'Movies & TV', 'about': 'I love a good movie or show! One of my favourite shows is Succession!', 'icon': 'https://thumbs.dreamstime.com/b/big-open-clapper-board-movie-reel-cinema-icon-set-movie-film-elements-flat-design-cinema-movie-time-flat-icons-f-95500226.jpg'},
+    ]
+    
+    # Zidanni's hobbies
+    ZIDANNI_HOBBIES = [
+        {'title': 'Coding', 'about': 'I love to build applications and websites in my free time!', 'icon': 'https://cdn-icons-png.flaticon.com/512/1005/1005141.png'},
+        {'title': 'Reading', 'about': 'I enjoy reading books on technology and science fiction.', 'icon': 'https://cdn-icons-png.flaticon.com/512/2436/2436882.png'},
+        {'title': 'Photography', 'about': 'Capturing moments and scenery through photography is one of my passions.', 'icon': 'https://cdn-icons-png.flaticon.com/512/1042/1042390.png'},
+    ]
+    
+    # Deeptanshu's hobbies
+    DEEPTANSHU_HOBBIES = [
+        {'title': 'Open Source', 'about': 'I actively contribute to open source projects in my free time.', 'icon': 'https://cdn-icons-png.flaticon.com/512/2111/2111432.png'},
+        {'title': 'Hiking', 'about': 'I enjoy exploring nature and going on hikes in Colorado.', 'icon': 'https://cdn-icons-png.flaticon.com/512/71/71423.png'},
+        {'title': 'Coding', 'about': 'I enjoy working with Go, TypeScript, and Python to build scalable systems.', 'icon': 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png'},
+    ]
+
+    about_text = "We all have various hobbies and interests that help us recharge and grow outside of our professional lives. Here's a glimpse into what we enjoy doing in our free time."
+    
+    return render_template('hobbies.html', 
+                          title="Our Hobbies", 
+                          url=os.getenv("URL"), 
+                          nav_items=nav_data, 
+                          manav_hobbies=MANAV_HOBBIES,
+                          zidanni_hobbies=ZIDANNI_HOBBIES,
+                          deeptanshu_hobbies=DEEPTANSHU_HOBBIES,
+                          about_me_text=about_text)

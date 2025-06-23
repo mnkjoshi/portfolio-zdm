@@ -35,5 +35,101 @@
         </div>
     </header>
 
+    <div class="profile">
+        <div id="profile-picture" class="profile-picture">
+            <img src= "https://thumbs.dreamstime.com/b/hobby-icons-28567715.jpg" alt="Profile Picture">
+        </div>
+        <h1>{{ title }}</h1>
+    </div>
+
+    <!-- About Hobbies Section -->
+    <section class="about-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2>Our Hobbies</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>{{ about_me_text }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manav's Hobbies Section -->
+    <section class="hobbies-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2>Manav's Hobbies</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    {% for hobby in manav_hobbies %}
+                        <div class="experience-item">
+                            <div class="hobby-item">
+                                <img src="{{ hobby.icon }}" alt="{{ hobby.title }} icon" style="width: 50px; height: 50px; margin-right: 15px;">
+                                <div>
+                                    <h3>{{ hobby.title }}</h3>
+                                    <p>{{ hobby.about }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zidanni's Hobbies Section -->
+    <section class="hobbies-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2>Zidanni's Hobbies</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    {% for hobby in zidanni_hobbies %}
+                        <div class="experience-item">
+                            <div class="hobby-item">
+                                <img src="{{ hobby.icon }}" alt="{{ hobby.title }} icon" style="width: 50px; height: 50px; margin-right: 15px;">
+                                <div>
+                                    <h3>{{ hobby.title }}</h3>
+                                    <p>{{ hobby.about }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deeptanshu's Hobbies Section -->
+    <section class="hobbies-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2>Deeptanshu's Hobbies</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    {% for hobby in deeptanshu_hobbies %}
+                        <div class="experience-item">
+                            <div class="hobby-item">
+                                <img src="{{ hobby.icon }}" alt="{{ hobby.title }} icon" style="width: 50px; height: 50px; margin-right: 15px;">
+                                <div>
+                                    <h3>{{ hobby.title }}</h3>
+                                    <p>{{ hobby.about }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
