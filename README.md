@@ -54,6 +54,9 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 - Zidanni: Added personal work experiences
 - Zidanni: Added personal education
 - Zidanni: Added personal Hobbies
+- Deeptanshu: Added personal work experiences
+- Deeptanshu: Added personal education
+- Deeptanshu: Added personal Hobbies
 ## Installation
 
 Make sure you have python3 and pip installed

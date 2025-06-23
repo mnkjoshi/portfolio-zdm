@@ -105,7 +105,7 @@ def hobbies():
     # Deeptanshu's hobbies
     DEEPTANSHU_HOBBIES = [
         {'title': 'Open Source', 'about': 'I actively contribute to open source projects in my free time.', 'icon': 'https://cdn-icons-png.flaticon.com/512/2111/2111432.png'},
-        {'title': 'Hiking', 'about': 'I enjoy exploring nature and going on hikes in Colorado.', 'icon': 'https://cdn-icons-png.flaticon.com/512/71/71423.png'},
+        {'title': 'Hiking', 'about': 'I enjoy exploring nature and going on hikes in Colorado and biking in Boulder!', 'icon': 'https://cdn-icons-png.flaticon.com/512/71/71423.png'},
         {'title': 'Coding', 'about': 'I enjoy working with Go, TypeScript, and Python to build scalable systems.', 'icon': 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png'},
     ]
 
