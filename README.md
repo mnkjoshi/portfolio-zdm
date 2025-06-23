@@ -49,7 +49,9 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 - Manav: Added hobbies page with jinja template
 - Manav: Created styling to dynamically include hobby data
 - Manav: Added personal hobby information
-
+- Zidanni: Added personal work experiences
+- Zidanni: Added personal education
+- Zidanni: Added personal Hobbies
 ## Installation
 
 Make sure you have python3 and pip installed
