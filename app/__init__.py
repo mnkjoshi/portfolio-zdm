@@ -33,7 +33,18 @@ def get_nav_data(current_route):
 @app.route('/')
 def index():
     nav_data = get_nav_data('index')
-    return render_template('zidanni.html', title="Zidanni Clerigo", url=os.getenv("URL"), nav_items=nav_data)
+    
+    EXPERIENCE = [
+        {'company': 'Independent', 'title': 'Software Developer', 'date': 'September 2024 – Present'},
+        {'company': 'Elmhurst Care Center Nursing Home', 'title': 'Software Developer', 'date': 'July 2022 – August 2023'},
+        {'company': 'NYU Tandon School of Engineering', 'title': 'Researcher and Game Developer', 'date': 'April 2022 – June 2024'},
+    ]
+
+    EDUCATION = [
+        {'school': 'Stevens Institute of Technology', 'title': 'Bachelor of Science in Computer Science'},
+    ]
+    
+    return render_template('zidanni.html', title="Zidanni Clerigo", url=os.getenv("URL"), nav_items=nav_data, profile_picture="./static/img/zidanni.jpg", education=EDUCATION, experience=EXPERIENCE, about_me_text="Hello! I'm Zidanni Clerigo, an incoming second year Computer Science student at Stevens Institute of Technology. I'm super passionate about building projects and pitching them to other people! Deployment and maintenance has always been a roadblock for me so I'm very excited to be in the Production Engineering track.")
 
 
 @app.route('/manav')
