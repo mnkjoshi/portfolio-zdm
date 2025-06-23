@@ -32,6 +32,7 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 
 ## Getting Started
 
+- Deeptanshu: Initialized project and invited collaborators
 - Zidanni: Setup up seperate pages including hobby page
 - Zidanni: Setup navbar and routes
 - Zidanni: Added personal photo
