@@ -69,7 +69,19 @@ def manav():
 @app.route('/deeptanshu')
 def deeptanshu():
     nav_data = get_nav_data('deeptanshu')
-    return render_template('deeptanshu.html', title="Deeptanshu Sankhwar", url=os.getenv("URL"), nav_items=nav_data)
+    template = env.get_template("profile.html")
+
+    EXPERIENCE = [
+        {'company': 'CU Boulder', 'title': 'Research Assistant', 'date': 'December 2024 - May 2025'},
+        {'company': 'Remaster.IO', 'title': 'Software Engineer', 'date': 'June 2022 - Aug 2024'},
+        {'company': 'Vedantu', 'title': 'Software Engineer', 'date': 'June 2021 - June 2022'},
+    ]
+
+    EDUCATION = [
+        {'school': 'University of Colorado, Boulder', 'title': 'Computer Science'},
+    ]
+    
+    return template.render(title="Deeptanshu", url=os.getenv("URL"), nav_items=nav_data, profile_picture="./static/img/deeptanshu.jpg", education=EDUCATION, experience=EXPERIENCE, map="./static/img/deeptanshu-map.jpg", about_me_text="I am Deeptanshu Sankhwar, I study Computer Science at the University of Colorado, Boulder. I am passionate about full stack development, distributed systems and infrstructures. I'm thrilled to join the MLH Fellowship's Production Engineering track to sharpen my skills in infrastructure, reliability, and DevOps while contributing to high-impact systems. I actively contribute to open source and have worked on projects like OpenStreetMap, Langfuse, and more focusing on performance, scalability, and developer experience. Open source excites me because it blends collaboration, transparency, and real-world engineering challenges. Technically, I enjoy working with Go, TypeScript, and Python to build scalable systems and automate complex workflows.")
 
 
 @app.route('/hobbies')
@@ -93,7 +105,7 @@ def hobbies():
     # Deeptanshu's hobbies
     DEEPTANSHU_HOBBIES = [
         {'title': 'Open Source', 'about': 'I actively contribute to open source projects in my free time.', 'icon': 'https://cdn-icons-png.flaticon.com/512/2111/2111432.png'},
-        {'title': 'Hiking', 'about': 'I enjoy exploring nature and going on hikes in Colorado.', 'icon': 'https://cdn-icons-png.flaticon.com/512/71/71423.png'},
+        {'title': 'Hiking', 'about': 'I enjoy exploring nature and going on hikes in Colorado and biking in Boulder!', 'icon': 'https://cdn-icons-png.flaticon.com/512/71/71423.png'},
         {'title': 'Coding', 'about': 'I enjoy working with Go, TypeScript, and Python to build scalable systems.', 'icon': 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png'},
     ]
 
