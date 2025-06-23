@@ -46,6 +46,8 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 - Manav: Merged profile pages into one re-usable component, integrated jinja for components
 - Manav, Zidanni, Deeptanshu: Reviewed and approved PRs
 - Zidanni: Fixed jinja template styling to include date and company
+- Manav: Added hobbies page with jinja template
+- Manav: Created styling to dynamically include hobby data
 
 ## Installation
 
