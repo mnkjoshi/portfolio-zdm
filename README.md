@@ -48,6 +48,7 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 - Zidanni: Fixed jinja template styling to include date and company
 - Manav: Added hobbies page with jinja template
 - Manav: Created styling to dynamically include hobby data
+- Manav: Added personal hobby information
 
 ## Installation
 
