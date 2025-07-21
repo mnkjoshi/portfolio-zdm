@@ -1,11 +1,12 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 from peewee import *
 from jinja2 import Environment, PackageLoader, select_autoescape
 import datetime
 
 from playhouse.shortcuts import model_to_dict
+from app.timeline import timeline_bp
 
 # Initialize Jinja2 environment
 
@@ -44,7 +45,8 @@ NAV_ITEMS = [
     {'name': 'Zidanni', 'url': '/', 'route': 'index'},
     {'name': 'Manav', 'url': '/manav', 'route': 'manav'},
     {'name': 'Deeptanshu', 'url': '/deeptanshu', 'route': 'deeptanshu'},
-    {'name': 'Hobbies', 'url': '/hobbies', 'route': 'hobbies'}
+    {'name': 'Hobbies', 'url': '/hobbies', 'route': 'hobbies'},
+    {'name': 'Timeline', 'url': '/timeline', 'route': 'timeline'}
 ]
 
 def get_nav_data(current_route):
@@ -138,12 +140,26 @@ def timeline():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post =  TimelinePost.create(name=name, email=email, content=content)
-
-    return model_to_dict(timeline_post)
+    try:
+        # Handle both JSON and form data
+        if request.is_json:
+            data = request.get_json()
+            name = data.get('name')
+            email = data.get('email')
+            content = data.get('content')
+        else:
+            name = request.form['name']
+            email = request.form['email']
+            content = request.form['content']
+        
+        # Validate required fields
+        if not all([name, email, content]):
+            return jsonify({'error': 'All fields are required'}), 400
+            
+        timeline_post = TimelinePost.create(name=name, email=email, content=content)
+        return jsonify(model_to_dict(timeline_post))
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -163,3 +179,7 @@ def delete_timeline_post(post_id):
         return {'message': f'Post {post_id} deleted successfully.'}
     except TimelinePost.DoesNotExist:
         return {'error': 'Post not found'}, 404
+    
+
+def create_app():
+    app.register_blueprint(timeline_bp)
