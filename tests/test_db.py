@@ -1,33 +1,10 @@
 import unittest
 from peewee import *
-<<<<<<< HEAD
-=======
 
->>>>>>> 0432e7c40857ae1ce2cd76808a2bc96b9c3424ad
 from app import TimelinePost
 
 MODELS = [TimelinePost]
 
-<<<<<<< HEAD
-test_db = SqliteDatabase(':memory:')
-
-class TestTimelinePost(unittest.TestCase):
-   def setUp(self):
-      test_db.bind(MODELS, bind_refs=False, bind_backrefs=False)
-
-      test_db.connect()
-      test_db.create_taaddbles(MODELS)
-
-   def tearDown(self):
-      test_db.drop_tables(MODELS)
-      test_db.close()
-
-   def test_timeline_post(self):
-      first_post = TimelinePost.create(name='John Doe', email='john@example.com', content='Hello, world, I\'m John!')
-      assert first_post.id == 1
-      second_post = TimelinePost.create(name='Jane Doe', email='jame@example.com', content= 'Hello, world, I\'m Jane!')
-      assert second_post.id == 2
-=======
 # use an in-memory SQLite for tests.
 test_db = SqliteDatabase(':memory:')
 
@@ -60,4 +37,27 @@ class TestTimelinePost(unittest.TestCase):
         timeline_posts = TimelinePost.select()
         assert timeline_posts[0] == first_post
         assert timeline_posts[1] == second_post
->>>>>>> 0432e7c40857ae1ce2cd76808a2bc96b9c3424ad
+import unittest
+from peewee import *
+from app import TimelinePost
+
+MODELS = [TimelinePost]
+
+test_db = SqliteDatabase(':memory:')
+
+class TestTimelinePost(unittest.TestCase):
+   def setUp(self):
+      test_db.bind(MODELS, bind_refs=False, bind_backrefs=False)
+
+      test_db.connect()
+      test_db.create_taaddbles(MODELS)
+
+   def tearDown(self):
+      test_db.drop_tables(MODELS)
+      test_db.close()
+
+   def test_timeline_post(self):
+      first_post = TimelinePost.create(name='John Doe', email='john@example.com', content='Hello, world, I\'m John!')
+      assert first_post.id == 1
+      second_post = TimelinePost.create(name='Jane Doe', email='jame@example.com', content= 'Hello, world, I\'m Jane!')
+      assert second_post.id == 2
