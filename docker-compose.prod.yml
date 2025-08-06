@@ -7,18 +7,12 @@ services:
     env_file:
       - .env
     depends_on:
-      mysql:
-        condition: service_healthy
+      - mysql
 
   mysql:
     container_name: mysql
     image: mariadb
     restart: always
-    healthcheck:
-     test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/localhost/3306'"]
-     interval: 10s
-     timeout: 5s
-     retries: 5
     env_file:
       - .env
     volumes:
@@ -29,7 +23,7 @@ services:
     image: jonasal/nginx-certbot
     restart: always
     environment:
-      - CERTBOT_EMAIL=zidanni.clerigo@gmail.com
+      - CERTBOT_EMAIL=manavnkjoshi@gmail.com
     ports:
       - 80:80
       - 443:443
