@@ -18,7 +18,7 @@ env = Environment(
 load_dotenv()
 app = Flask(__name__)
 
-print("ENV VARS:", dict(os.environ))  # Add this line temporarily
+# print("ENV VARS:", dict(os.environ))  # Add this line temporarily
 
 
 if os.getenv("TESTING") == "true":
